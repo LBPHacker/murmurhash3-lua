@@ -3,7 +3,7 @@ murmurhash3
 
 Murmurhash 3 for Lua
 
-##Installation
+## Installation
 
 ```bash
 $ sudo luarocks install --server=http://rocks.moonscript.org murmurhash3
@@ -23,12 +23,15 @@ local mmh3 = require "murmurhash3"
 
 local seed = 0 -- (optional)
 local data = "payload"
+local data_array = {0x70, 0x61, 0x79, 0x6C, 0x6F, 0x61, 0x64} -- same
 
 local hash = mmh3.hash32(data, seed)
-local raw = mmh3.hash32(data, seed, true)
 
 -- hash: 1120944743
--- raw: (4 byte)
+
+local hash_array = mmh3.hash32_array(data_array, seed)
+
+-- hash_array: 1120944743
 ```
 
 ## License
